@@ -1,0 +1,76 @@
+
+
+DROP TABLE visits, dogs;
+
+
+
+CREATE TABLE dogs (
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	breed VARCHAR(17),
+	name VARCHAR(15) NOT NULL
+	);
+
+
+
+INSERT INTO dogs
+	VALUES(1, 'Yorkshire Terrier', 'Rocky'),
+	      ('', 'Boston Terrier', 'Iggy'),
+	      ('', 'German Shephard', 'Clause'),
+	      ('', 'Chihuahua', 'Goliath'),
+	      ('', 'Golden Retreiver', 'Lassy');
+
+
+DESCRIBE dogs;
+
+SELECT * FROM dogs;
+
+
+CREATE TABLE visits(
+	Vid INTEGER PRIMARY KEY AUTO_INCREMENT,
+	id INTEGER,
+	FOREIGN KEY(id) REFERENCES dogs(id),
+	date DATE
+	);
+
+
+INSERT INTO visits
+	VALUES(100,4, '2016-02-23'),
+	      ('',3, '2017-11-03'),
+	      ('',2, '2016-03-11'),
+	      ('',1, '2018-07-06'),
+	      ('',4, '2019-12-27'),
+	      ('',5, '2016-01-13'),
+	      ('',3, '2017-06-20'),
+	      ('',2, '2018-10-01'); 
+
+
+
+
+DESCRIBE visits;
+
+SELECT * FROM visits;
+
+
+ALTER TABLE visits add(
+		day_of_week    char(9) );
+
+
+UPDATE visits
+	set day_of_week = 'Wednesday'
+	    where Vid = 101;
+UPDATE visits
+	set day_of_week = 'Saturday'
+	    where Vid = 103;
+UPDATE visits
+	set day_of_week = 'Tuesday'
+	    where Vid = 102;
+UPDATE visits
+	set day_of_week = 'Friday'
+	    where Vid = 104;
+UPDATE visits
+	set day_of_week = 'Monday'
+	    where Vid = 107;
+
+
+
+SELECT * FROM visits;

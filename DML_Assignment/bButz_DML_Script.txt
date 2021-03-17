@@ -1,0 +1,64 @@
+SHOW TABLES;
+
+
+DESCRIBE BabyName;
+
+
+SELECT DISTINCT year
+   FROM BabyName
+   WHERE name = 'Bryan';
+
+
+
+SELECT DISTINCT  name 
+   FROM BabyName 
+   WHERE year = '1992';
+
+
+
+SELECT name, count, gender 
+   FROM BabyName 
+   WHERE year = '1992' 
+   AND count = (SELECT MAX(count) FROM BabyName 
+		WHERE year = '1992' AND gender = 'M')  
+     UNION 
+  SELECT name, count, gender 
+    FROM BabyName 
+    WHERE year = '1992' 
+    AND count = (SELECT MAX(count) FROM BabyName 
+                 WHERE year = '1992' AND gender = 'F');
+
+
+
+SELECT * FROM BabyName 
+  WHERE name LIKE 'Bryan' 
+  ORDER BY name DESC, count, year;
+
+
+
+
+SELECT COUNT(*) FROM BabyName;
+
+
+
+
+SELECT COUNT(name) FROM BabyName 
+   WHERE year = 1960;
+
+
+
+
+SELECT count(name), gender 
+   FROM BabyName 
+   WHERE year = '1927' 
+   GROUP BY gender;
+
+
+
+
+SELECT COUNT(name),place 
+   FROM BabyName 
+   GROUP BY place;
+
+
+

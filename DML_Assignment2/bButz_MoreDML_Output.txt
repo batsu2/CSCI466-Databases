@@ -1,0 +1,393 @@
+MariaDB [henrybooks]> \. /home/hopper/z1836033/bButz_MoreDML_Script.txt
++-------------+--------------+
+| AuthorFirst | AuthorLast   |
++-------------+--------------+
+| Albert      | Camus        |
+| Barbara     | Owen         |
+| Bradley     | Collins, Jr. |
+| Bradley     | Collins      |
+| Dick        | Francis      |
+| Douglas R.  | Hofstadter   |
+| Gary        | Wills        |
+| Harper      | Lee          |
+| J.D.        | Salinger     |
+| J.K.        | Rowling      |
+| John        | Steinbeck    |
+| Joseph      | Heller       |
+| Lon         | Schleining   |
+| Paul        | Solotaroff   |
+| Peter       | Straub       |
+| Philip      | Pratt        |
+| Randy       | O'Rourke     |
+| Riva        | Castelman    |
+| Seamus      | Heaney       |
+| Stephen     | King         |
+| Stephen E.  | Ambrose      |
+| Toni        | Morrison     |
+| Tracy       | Kidder       |
+| Truddi      | Chase        |
+| Vernor      | Vintage      |
++-------------+--------------+
+25 rows in set (0.00 sec)
+
++--------------+
+| City         |
++--------------+
+| Sauk City WI |
+| New York     |
+| Boulder CO   |
+| Boston       |
+| Los Angeles  |
+| Kingston     |
+| Newtown CT   |
+| Westport CT  |
++--------------+
+8 rows in set (0.00 sec)
+
++---------------------+
+| Total Num of Titles |
++---------------------+
+|                  33 |
++---------------------+
+1 row in set (0.00 sec)
+
++-------------------+-----------------+
+| BranchName        | Total Inventory |
++-------------------+-----------------+
+| Henry Brentwood   |              29 |
+| Henry Downtown    |              22 |
+| Henry Eastshore   |              17 |
+| Henry On The Hill |              31 |
++-------------------+-----------------+
+4 rows in set (0.00 sec)
+
++-----------------+
+| Total Employees |
++-----------------+
+|              40 |
++-----------------+
+1 row in set (0.00 sec)
+
++-----------------------+
+| Title                 |
++-----------------------+
+| Dreamcatcher: A Novel |
+| Black House           |
++-----------------------+
+2 rows in set (0.00 sec)
+
++---------------------------------------+------+-------+
+| Title                                 | Type | Price |
++---------------------------------------+------+-------+
+| A Deepness in the Sky                 | SFI  |  7.19 |
+| Magic Terror                          | HOR  |  7.99 |
+| The Stranger                          | FIC  |  8.00 |
+| The Edge                              | MYS  |  6.99 |
+| Beloved                               | FIC  | 12.95 |
+| Of Mice and Men                       | FIC  |  6.95 |
+| Group: Six People in Search of a Life | PSY  | 10.40 |
+| Nine Stories                          | FIC  |  5.99 |
+| The Soul of a New Machine             | SCI  | 11.16 |
+| Travels with Charley                  | TRA  |  7.95 |
+| Catch-22                              | FIC  | 12.00 |
+| Jazz                                  | FIC  | 12.95 |
+| Band of Brothers                      | HIS  |  9.60 |
+| A Guide to SQL                        | CMP  | 37.95 |
+| Franny and Zooey                      | FIC  |  5.99 |
+| East of Eden                          | FIC  | 12.95 |
+| The Fall                              | FIC  |  8.00 |
+| Godel, Escher, Bach                   | PHI  | 14.00 |
+| When Rabbit Howls                     | PSY  |  6.29 |
+| Song of Solomon                       | FIC  | 14.00 |
+| The Grapes of Wrath                   | FIC  | 13.00 |
+| Slay Ride                             | MYS  |  6.99 |
+| The Catcher in the Rye                | FIC  |  5.99 |
++---------------------------------------+------+-------+
+23 rows in set (0.00 sec)
+
+Empty set (0.00 sec)
+
++------------------------------------------+--------------+-------------+
+| Title                                    | AuthorLast   | AuthorFirst |
++------------------------------------------+--------------+-------------+
+| When Rabbit Howls                        | Chase        | Truddi      |
+| Venice                                   | Wills        | Gary        |
+| Van Gogh and Gauguin                     | Collins      | Bradley     |
+| Van Gogh and Gauguin                     | Collins, Jr. | Bradley     |
+| Treasure Chests                          | O'Rourke     | Randy       |
+| Treasure Chests                          | Schleining   | Lon         |
+| Travels with Charley                     | Steinbeck    | John        |
+| To Kill a Mockingbird                    | Lee          | Harper      |
+| The Stranger                             | Camus        | Albert      |
+| The Soul of a New Machine                | Kidder       | Tracy       |
+| The Grapes of Wrath                      | Steinbeck    | John        |
+| The Fall                                 | Camus        | Albert      |
+| The Edge                                 | Francis      | Dick        |
+| The Catcher in the Rye                   | Salinger     | J.D.        |
+| Song of Solomon                          | Morrison     | Toni        |
+| Slay Ride                                | Francis      | Dick        |
+| Second Wind                              | Francis      | Dick        |
+| Of Mice and Men                          | Steinbeck    | John        |
+| Nine Stories                             | Salinger     | J.D.        |
+| Magic Terror                             | Straub       | Peter       |
+| Jazz                                     | Morrison     | Toni        |
+| Harry Potter and the Prisoner of Azkaban | Rowling      | J.K.        |
+| Harry Potter and the Goblet of Fire      | Rowling      | J.K.        |
+| Group: Six People in Search of a Life    | Solotaroff   | Paul        |
+| Godel, Escher, Bach                      | Hofstadter   | Douglas R.  |
+| Franny and Zooey                         | Salinger     | J.D.        |
+| Electric Light                           | Heaney       | Seamus      |
+| East of Eden                             | Steinbeck    | John        |
+| Dreamcatcher: A Novel                    | King         | Stephen     |
+| Catch-22                                 | Heller       | Joseph      |
+| Black House                              | Straub       | Peter       |
+| Black House                              | King         | Stephen     |
+| Beloved                                  | Morrison     | Toni        |
+| Band of Brothers                         | Ambrose      | Stephen E.  |
+| A Guide to SQL                           | Pratt        | Philip      |
+| A Deepness in the Sky                    | Vintage      | Vernor      |
++------------------------------------------+--------------+-------------+
+36 rows in set (0.00 sec)
+
++--------------------------+-----------------------+
+| PublisherName            | Total Books Published |
++--------------------------+-----------------------+
+| Back Bay Books           |                     1 |
+| Basic Books              |                     1 |
+| Berkley Publishing       |                     1 |
+| Course Technology        |                     1 |
+| Farrar Straus and Giroux |                     1 |
+| Fawcett Books            |                     1 |
+| HarperCollins Publishers |                     1 |
+| Jove Publications        |                     3 |
+| Lb Books                 |                     3 |
+| Penguin USA              |                     4 |
+| Plume                    |                     3 |
+| Putnam Publishing Group  |                     1 |
+| Random House             |                     1 |
+| Scholastic Trade         |                     2 |
+| Scribner                 |                     2 |
+| Simon and Schuster       |                     1 |
+| Taunton Press            |                     1 |
+| Tor Books                |                     1 |
+| Touchstone Books         |                     1 |
+| Vintage Books            |                     2 |
+| Westview Press           |                     1 |
++--------------------------+-----------------------+
+21 rows in set (0.00 sec)
+
++----------------------+
+| Titles less than $10 |
++----------------------+
+|                   13 |
++----------------------+
+1 row in set (0.00 sec)
+
++------------+
+| AuthorLast |
++------------+
+| Wills      |
++------------+
+1 row in set (0.00 sec)
+
++------+------------+
+| Type | Book Count |
++------+------------+
+| ART  |          3 |
+| CMP  |          1 |
+| FIC  |         13 |
+| HIS  |          1 |
+| HOR  |          3 |
+| MYS  |          3 |
+| PHI  |          1 |
+| POE  |          1 |
+| PSY  |          2 |
+| SCI  |          1 |
+| SFI  |          3 |
+| TRA  |          1 |
++------+------------+
+12 rows in set (0.00 sec)
+
++--------------------------+
+| Brentwood Mall Inventory |
++--------------------------+
+|                       29 |
++--------------------------+
+1 row in set (0.00 sec)
+
++----------------+--------------+----------------+
+| BranchLocation | NumEmployees | Number On Hand |
++----------------+--------------+----------------+
+| 1289 Bedford   |            6 |             31 |
+| 16 Riverview   |           10 |             22 |
+| Brentwood Mall |           15 |             29 |
+| Eastshore Mall |            9 |             17 |
++----------------+--------------+----------------+
+4 rows in set (0.00 sec)
+
++------------------------------------------+
+| Title                                    |
++------------------------------------------+
+| A Deepness in the Sky                    |
+| Magic Terror                             |
+| The Stranger                             |
+| Venice                                   |
+| Second Wind                              |
+| The Edge                                 |
+| Dreamcatcher: A Novel                    |
+| Treasure Chests                          |
+| Beloved                                  |
+| Harry Potter and the Prisoner of Azkaban |
+| Van Gogh and Gauguin                     |
+| Of Mice and Men                          |
+| Electric Light                           |
+| Group: Six People in Search of a Life    |
+| Nine Stories                             |
+| The Soul of a New Machine                |
+| Travels with Charley                     |
+| Catch-22                                 |
+| Jazz                                     |
+| Band of Brothers                         |
+| A Guide to SQL                           |
+| Franny and Zooey                         |
+| East of Eden                             |
+| Harry Potter and the Goblet of Fire      |
+| The Fall                                 |
+| Godel, Escher, Bach                      |
+| When Rabbit Howls                        |
+| Black House                              |
+| Song of Solomon                          |
+| The Grapes of Wrath                      |
+| Slay Ride                                |
+| The Catcher in the Rye                   |
+| To Kill a Mockingbird                    |
++------------------------------------------+
+33 rows in set (0.00 sec)
+
++-------------------+
+| PublisherName     |
++-------------------+
+| Taunton Press     |
+| Tor Books         |
+| Thames and Hudson |
+| Touchstone Books  |
++-------------------+
+4 rows in set (0.00 sec)
+
++-----------+--------------+-------------+
+| AuthorNum | AuthorLast   | AuthorFirst |
++-----------+--------------+-------------+
+|         9 | Collins      | Bradley     |
+|        10 | Heller       | Joseph      |
+|        11 | Wills        | Gary        |
+|        19 | Collins, Jr. | Bradley     |
++-----------+--------------+-------------+
+4 rows in set (0.00 sec)
+
++-----------------+
+| Title           |
++-----------------+
+| Second Wind     |
+| Treasure Chests |
+| Beloved         |
+| A Guide to SQL  |
++-----------------+
+4 rows in set (0.00 sec)
+
++------------------------------------------+--------------+--------------------------+
+| Title                                    | AuthorLast   | PublisherName            |
++------------------------------------------+--------------+--------------------------+
+| Band of Brothers                         | Ambrose      | Touchstone Books         |
+| The Fall                                 | Camus        | Vintage Books            |
+| The Stranger                             | Camus        | Vintage Books            |
+| When Rabbit Howls                        | Chase        | Jove Publications        |
+| Van Gogh and Gauguin                     | Collins      | Westview Press           |
+| Van Gogh and Gauguin                     | Collins, Jr. | Westview Press           |
+| Second Wind                              | Francis      | Putnam Publishing Group  |
+| Slay Ride                                | Francis      | Jove Publications        |
+| The Edge                                 | Francis      | Jove Publications        |
+| Electric Light                           | Heaney       | Farrar Straus and Giroux |
+| Catch-22                                 | Heller       | Scribner                 |
+| Godel, Escher, Bach                      | Hofstadter   | Basic Books              |
+| The Soul of a New Machine                | Kidder       | Back Bay Books           |
+| Black House                              | King         | Random House             |
+| Dreamcatcher: A Novel                    | King         | Scribner                 |
+| To Kill a Mockingbird                    | Lee          | HarperCollins Publishers |
+| Jazz                                     | Morrison     | Plume                    |
+| Song of Solomon                          | Morrison     | Plume                    |
+| Beloved                                  | Morrison     | Plume                    |
+| Treasure Chests                          | O'Rourke     | Taunton Press            |
+| A Guide to SQL                           | Pratt        | Course Technology        |
+| Harry Potter and the Prisoner of Azkaban | Rowling      | Scholastic Trade         |
+| Harry Potter and the Goblet of Fire      | Rowling      | Scholastic Trade         |
+| Nine Stories                             | Salinger     | Lb Books                 |
+| Franny and Zooey                         | Salinger     | Lb Books                 |
+| The Catcher in the Rye                   | Salinger     | Lb Books                 |
+| Treasure Chests                          | Schleining   | Taunton Press            |
+| Group: Six People in Search of a Life    | Solotaroff   | Berkley Publishing       |
+| The Grapes of Wrath                      | Steinbeck    | Penguin USA              |
+| Of Mice and Men                          | Steinbeck    | Penguin USA              |
+| East of Eden                             | Steinbeck    | Penguin USA              |
+| Travels with Charley                     | Steinbeck    | Penguin USA              |
+| Black House                              | Straub       | Random House             |
+| Magic Terror                             | Straub       | Fawcett Books            |
+| A Deepness in the Sky                    | Vintage      | Tor Books                |
+| Venice                                   | Wills        | Simon and Schuster       |
++------------------------------------------+--------------+--------------------------+
+36 rows in set (0.01 sec)
+
++------------+
+| AuthorLast |
++------------+
+| Wills      |
++------------+
+1 row in set (0.00 sec)
+
++---------------------------------------+------+-------+
+| Title                                 | Type | Price |
++---------------------------------------+------+-------+
+| A Deepness in the Sky                 | SFI  |  7.19 |
+| Magic Terror                          | HOR  |  7.99 |
+| The Stranger                          | FIC  |  8.00 |
+| The Edge                              | MYS  |  6.99 |
+| Beloved                               | FIC  | 12.95 |
+| Of Mice and Men                       | FIC  |  6.95 |
+| Group: Six People in Search of a Life | PSY  | 10.40 |
+| Nine Stories                          | FIC  |  5.99 |
+| The Soul of a New Machine             | SCI  | 11.16 |
+| Travels with Charley                  | TRA  |  7.95 |
+| Catch-22                              | FIC  | 12.00 |
+| Jazz                                  | FIC  | 12.95 |
+| Band of Brothers                      | HIS  |  9.60 |
+| A Guide to SQL                        | CMP  | 37.95 |
+| Franny and Zooey                      | FIC  |  5.99 |
+| East of Eden                          | FIC  | 12.95 |
+| The Fall                              | FIC  |  8.00 |
+| Godel, Escher, Bach                   | PHI  | 14.00 |
+| When Rabbit Howls                     | PSY  |  6.29 |
+| Song of Solomon                       | FIC  | 14.00 |
+| The Grapes of Wrath                   | FIC  | 13.00 |
+| Slay Ride                             | MYS  |  6.99 |
+| The Catcher in the Rye                | FIC  |  5.99 |
++---------------------------------------+------+-------+
+23 rows in set (0.00 sec)
+
++------+---------------+
+| Type | Average Price |
++------+---------------+
+| ART  |     23.320000 |
+| CMP  |     37.950000 |
+| FIC  |     10.520769 |
+| HIS  |      9.600000 |
+| HOR  |     15.466667 |
+| MYS  |     12.976667 |
+| PHI  |     14.000000 |
+| POE  |     14.000000 |
+| PSY  |      8.345000 |
+| SCI  |     11.160000 |
+| SFI  |     13.103333 |
+| TRA  |      7.950000 |
++------+---------------+
+12 rows in set (0.00 sec)
+
+

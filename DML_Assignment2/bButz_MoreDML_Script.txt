@@ -1,0 +1,197 @@
+#1)
+SELECT AuthorFirst, AuthorLast 
+   FROM Author 
+   ORDER BY AuthorFirst ASC;
+
+
+#2)
+SELECT DISTINCT City 
+   FROM Publisher;
+
+
+
+#3)
+SELECT COUNT(Title) AS 'Total Num of Titles'
+   FROM Book;
+
+
+
+#4)
+SELECT Branch.BranchName, Sum(Inventory.OnHand) AS 'Total Inventory' 
+   FROM Branch 
+   INNER JOIN Inventory 
+       ON Branch.BranchNum = Inventory.BranchNum  
+   GROUP BY Branch.BranchName;
+
+
+
+
+#5)
+SELECT SUM(NumEmployees) AS 'Total Employees'
+   FROM Branch;
+
+
+
+#6)
+SELECT Title 
+   FROM Book 
+   WHERE BookCode IN 
+     (SELECT BookCode FROM Wrote WHERE AuthorNum = 
+         (SELECT AuthorNum FROM Author WHERE AuthorFirst = 'Stephen' AND AuthorLast = 'King')
+      );
+
+
+
+
+#7)
+SELECT Title, Type, Price 
+   FROM Book 
+   WHERE Paperback = 'Y';
+
+
+
+
+#8)
+SELECT DISTINCT BranchName 
+   FROM Branch, Inventory 
+   WHERE Inventory.BranchNum = Branch.BranchNum 
+    AND Inventory.OnHand >= 10;
+
+
+
+
+#9)
+SELECT Title, AuthorLast, AuthorFirst  
+   FROM Book, Author, Wrote  
+   WHERE Book.BookCode = Wrote.BookCode 
+     AND Author.AuthorNum = Wrote.AuthorNum 
+   ORDER BY Title DESC;
+
+
+
+
+#10)
+SELECT PublisherName, COUNT(Book.Title) AS 'Total Books Published' 
+   FROM Publisher, Book 
+   WHERE Publisher.PublisherCode = Book.PublisherCode 
+   GROUP BY PublisherName;
+
+
+
+
+
+#11)
+SELECT COUNT(Title) AS 'Titles less than $10'
+   FROM Book 
+   WHERE Price < 10.00;
+
+
+
+#12)
+SELECT AuthorLast FROM Author 
+   WHERE AuthorNum IN 
+     (SELECT AuthorNum FROM Wrote WHERE BookCode IN 
+       (SELECT BookCode FROM Book WHERE PublisherCode = 
+        (SELECT PublisherCode FROM Publisher WHERE PublisherName = 'Simon and Schuster')
+       )
+      );
+
+
+
+
+
+#13)
+SELECT DISTINCT Type, COUNT(*) AS 'Book Count' 
+   FROM Book GROUP BY Type;
+
+
+
+
+
+#14)
+SELECT SUM(OnHand) AS 'Brentwood Mall Inventory'
+    FROM Inventory 
+    WHERE BranchNum = 
+       (SELECT BranchNum FROM Branch WHERE BranchLocation = 'Brentwood Mall');
+
+
+
+
+
+#15)
+SELECT BranchLocation, NumEmployees, SUM(OnHand) AS 'Number On Hand' 
+   FROM Branch, Inventory 
+   WHERE Branch.BranchNum = Inventory.BranchNum 
+   GROUP BY BranchLocation;
+
+
+
+
+
+#16)
+SELECT Title 
+   FROM Book, Wrote 
+   WHERE Wrote.BookCode = Book.BookCode AND Sequence = 
+          (SELECT Sequence FROM Wrote WHERE AuthorNum = 3);
+
+
+
+
+
+#17)
+SELECT PublisherName 
+   FROM Publisher 
+   WHERE PublisherName LIKE 'T%';
+
+
+
+#18)
+SELECT * FROM Author 
+   WHERE AuthorLast LIKE '%ll%' 
+    OR AuthorFirst LIKE '%ll%';
+
+
+
+
+#19)
+SELECT Title 
+   FROM Book 
+   WHERE BookCode LIKE '079_' 
+    OR BookCode LIKE '138_' 
+    OR BookCode LIKE '669_';
+
+
+
+#20)
+SELECT Title, AuthorLast, PublisherName  
+   FROM Book, Publisher, Author, Wrote  
+   WHERE Book.PublisherCode=Publisher.PublisherCode 
+     AND Book.BookCode = Wrote.BookCode 
+     AND Author.AuthorNum = Wrote.AuthorNum 
+   ORDER BY AuthorLast ASC;
+
+
+
+
+
+#21)
+   #First Re-do: Problem 12: List last names of all authors published by Simon and Schuster
+
+SELECT AuthorLast FROM Author
+   WHERE AuthorNum IN
+     (SELECT AuthorNum FROM Wrote WHERE BookCode IN
+       (SELECT BookCode FROM Book WHERE PublisherCode = 'SS'));
+
+
+   #Second Re-do: Problem 7: List title, type, and price for all paperback books
+SELECT Title, Type, Price
+   FROM Book
+   WHERE Paperback = 
+    (SELECT Paperback FROM Book WHERE BookCode = '0180');
+
+
+
+#22) Show the average price of each type of book
+SELECT Book.Type, Avg(Book.Price) AS 'Average Price'
+  FROM Book
+  GROUP BY Book.Type;

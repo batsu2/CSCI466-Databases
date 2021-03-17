@@ -1,0 +1,87 @@
+Query OK, 0 rows affected (0.19 sec)
+
+Query OK, 0 rows affected (0.97 sec)
+
+Query OK, 5 rows affected, 4 warnings (0.07 sec)
+Records: 5  Duplicates: 0  Warnings: 4
+
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| breed | varchar(17) | YES  |     | NULL    |                |
+| name  | varchar(15) | NO   |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
++----+-------------------+---------+
+| id | breed             | name    |
++----+-------------------+---------+
+|  1 | Yorkshire Terrier | Rocky   |
+|  2 | Boston Terrier    | Iggy    |
+|  3 | German Shephard   | Clause  |
+|  4 | Chihuahua         | Goliath |
+|  5 | Golden Retreiver  | Lassy   |
++----+-------------------+---------+
+5 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.40 sec)
+
+Query OK, 8 rows affected, 7 warnings (0.12 sec)
+Records: 8  Duplicates: 0  Warnings: 7
+
++-------+---------+------+-----+---------+----------------+
+| Field | Type    | Null | Key | Default | Extra          |
++-------+---------+------+-----+---------+----------------+
+| Vid   | int(11) | NO   | PRI | NULL    | auto_increment |
+| id    | int(11) | YES  | MUL | NULL    |                |
+| date  | date    | YES  |     | NULL    |                |
++-------+---------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
++-----+------+------------+
+| Vid | id   | date       |
++-----+------+------------+
+| 100 |    4 | 2016-02-23 |
+| 101 |    3 | 2017-11-03 |
+| 102 |    2 | 2016-03-11 |
+| 103 |    1 | 2018-07-06 |
+| 104 |    4 | 2019-12-27 |
+| 105 |    5 | 2016-01-13 |
+| 106 |    3 | 2017-06-20 |
+| 107 |    2 | 2018-10-01 |
++-----+------+------------+
+8 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.90 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
++-----+------+------------+-------------+
+| Vid | id   | date       | day_of_week |
++-----+------+------------+-------------+
+| 100 |    4 | 2016-02-23 | NULL        |
+| 101 |    3 | 2017-11-03 | Wednesday   |
+| 102 |    2 | 2016-03-11 | Tuesday     |
+| 103 |    1 | 2018-07-06 | Saturday    |
+| 104 |    4 | 2019-12-27 | Friday      |
+| 105 |    5 | 2016-01-13 | NULL        |
+| 106 |    3 | 2017-06-20 | NULL        |
+| 107 |    2 | 2018-10-01 | Monday      |
++-----+------+------------+-------------+
+8 rows in set (0.01 sec)
+
