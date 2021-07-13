@@ -1,0 +1,91 @@
+DROP TABLE CONTRIBUTES;
+
+DROP TABLE ADDS;
+
+DROP TABLE KARAOKE_FILE;
+
+DROP TABLE CONTRIBUTOR;
+
+DROP TABLE SONGS;
+
+DROP TABLE QUEUE;
+
+DROP TABLE USERS;
+
+
+
+CREATE TABLE USERS
+(
+           userid int primary key,
+           contact_details varchar(255)
+);
+
+CREATE TABLE QUEUE
+(
+           queueid int primary key AUTO_INCREMENT,
+           played bool
+);
+
+CREATE TABLE SONGS
+(
+           artist varchar(255),
+           title varchar(255),
+           primary key(artist, title)
+);
+
+CREATE TABLE CONTRIBUTOR
+(
+           contributorid int primary key,
+           name varchar(255)
+);
+
+CREATE TABLE KARAOKE_FILE
+(
+           fileid int primary key,
+           artist varchar(255),
+           title varchar(255),
+           FOREIGN KEY (artist, title) REFERENCES SONGS (artist, title)
+);
+
+CREATE TABLE ADDS
+(
+           userid int,
+           fileid int,
+           queueid int,
+           moneyspent int,
+           PRIMARY KEY (userid, fileid, queueid),
+           FOREIGN KEY (userid) REFERENCES USERS (userid),
+           FOREIGN KEY (fileid) REFERENCES KARAOKE_FILE (fileid),
+           FOREIGN KEY (queueid) REFERENCES QUEUE (queueid)
+
+);
+
+CREATE TABLE CONTRIBUTES
+(
+           contributorid int,
+           artist varchar(255),
+           title varchar(255),
+           type varchar(255),
+           primary key(contributorid, artist, title),
+           foreign key (contributorid) references CONTRIBUTOR(contributorid),
+           foreign key (artist, title) references SONGS(artist, title)
+
+);
+
+
+
+INSERT INTO USERS (userid,contact_details) values(1,'ur mum'), (2,'the rugrats'), (3,'a cabbage'), (4,'spongebob squarepants'), (5,'Mel Gibson'), (6,'Santa'), (7,'that hobo across the street'), (8,'some random thot'), (9,'Cthulhu'), (10,'Keanu Reeves');
+
+INSERT INTO QUEUE (queueid) values ('1'), ('2'), ('3'), ('4'), ('5'), ('6'), ('7'), ('8'), ('9'), ('10');
+
+INSERT INTO SONGS (artist, title) values ('Drake', 'You The Reason Our Kids Are So Ugly'), ('Nirvana', 'All By Myself'), ('Taylor Swift', 'Chocolate City'), ('U2', 'If I Were a Rich Man'), ('Queen', 'Ironic'), ('Weezer', 'Lonely Woman'), ('Red Hot Chili Peppers', 'Perdido'), ('Green Day', 'Sixteen Blue'), ('Nirvana', 'Smells Like Teen Spirit'), ('Nirvana', 'Lithium'), ('Nirvana', 'Heart Shaped Box'), ('The Beatles', 'Take Me Or Leave Me'), ('Eminem', 'You Better Go Now'), ('Drown', 'You Better Go Now'), ('Queen', 'Bohemian Rhapsody'), ('Panic! At the Disco', 'Bohemian Rhapsody'), ('Marc Martel', 'Bohemian Rhapsody');
+
+INSERT INTO CONTRIBUTOR (contributorid,name) values (1,'Matthew Allen'), (2,'Stephen Bach'), (3,'Rosemary Batt'), (4,'Paul Boselie'), (5,'Bill Cookie'), (6,'Coke Mike'), (7,'Randy Savage'), (8,'Ryan Clark'), (9,'Clair Peter'), (10,'Earl Miller'), (11,'Stephen Miller'), (12,'Freddie Mercury'), (13,'Brendon Urie'), (14,'Marc Martel');
+
+INSERT INTO KARAOKE_FILE (fileid,artist, title) values (1,'Drake', 'You The Reason Our Kids Are So Ugly'), (2,'Nirvana', 'All By Myself'), (3,'Taylor Swift', 'Chocolate City'), (4,'U2', 'If I Were a Rich Man'), (5,'Queen', 'Ironic'), (6,'Weezer', 'Lonely Woman'), (7,'Red Hot Chili Peppers', 'Perdido'), (8,'Green Day', 'Sixteen Blue'), (9,'The Beatles', 'Take Me Or Leave Me'), (10,'Eminem', 'You Better Go Now'), (11,'Drown', 'You Better Go Now'), (12,'Queen', 'Bohemian Rhapsody'), (13,'Panic! At the Disco', 'Bohemian Rhapsody'), (14,'Marc Martel', 'Bohemian Rhapsody'), (15, 'Nirvana', 'Smells Like Teen Spirit'), (16, 'Nirvana', 'Lithium'), (17, 'Nirvana', 'Heart Shapped Box');
+
+INSERT INTO CONTRIBUTES (contributorid, artist, title, type) values (1,'Drake','You The Reason Our Kids Are So Ugly','author'), (2,'Nirvana', 'All By Myself','drummer'), (3,'Taylor Swift', 'Chocolate City','singer'), (4,'U2', 'If I Were a Rich Man','guitarist'), (5,'Queen', 'Ironic','author'), (6,'Weezer', 'Lonely Woman','guitarist'), (7,'Red Hot Chili Peppers', 'Perdido','drummer'), (8,'Green Day', 'Sixteen Blue','singer'), (9,'The Beatles', 'Take Me Or Leave Me','author'), (10,'Eminem', 'You Better Go Now','singer'), (11,'Drown', 'You Better Go Now','guitarist'), (12,'Queen', 'Bohemian Rhapsody','singer'), (13,'Panic! At the Disco', 'Bohemian Rhapsody','singer'),(14,'Marc Martel', 'Bohemian Rhapsody','singer');
+
+INSERT INTO ADDS (userid, fileid, queueid,moneyspent) values (1,1,1,0), (2,2,2,10), (3,3,3,30), (4,4,4,10), (5,5,5,40), (6,6,6,0),(7,7,7,20),(8,8,8,10),(9,9,9,0),(10,10,10,10);
+
+
