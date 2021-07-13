@@ -5,7 +5,7 @@
 
     <?php
 		$username='z1836033';
-		$password='1992Sep16';
+		$password='***********';
 
 	//Attempt to connect to the database
 	  try
